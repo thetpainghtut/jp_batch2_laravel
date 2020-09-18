@@ -1,0 +1,5 @@
+Laravel artisan commands
+------------------------
+  - php artisan route:list (show registered routes)
+  - php artisan make:model Staff -m -r (model/migration/controller)
+  - php artisan migrate

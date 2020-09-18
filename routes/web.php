@@ -13,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-  return 'Hello Laravel 7';
-});
+// Route::get('/', function () {
+//     // return view('welcome');
+//   return 'Hello Laravel 7';
+// });
+
+Route::get('/','PageController@home')->name('homepage');
+
+Route::get('main/{key}','PageController@main')->name('mainpage');
+
+Route::resource('staff','StaffController');  // 7 routes
