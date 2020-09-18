@@ -1,0 +1,8 @@
+Working with git 
+----------------
+(existing repo)
+  - git status
+  - git add .
+  - git commit -m "message"
+  - git push -u origin master
+
