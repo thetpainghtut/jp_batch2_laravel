@@ -87,7 +87,7 @@ class StaffController extends Controller
      */
     public function edit(Staff $staff)
     {
-        //
+        return view('backend.staff.edit',compact('staff'));
     }
 
     /**
@@ -99,7 +99,37 @@ class StaffController extends Controller
      */
     public function update(Request $request, Staff $staff)
     {
-        //
+        // dd($request);
+
+        // validation
+        $request->validate([
+            "name" => "required",
+            "profile" => "sometimes",  // 1
+            "phoneno" => "required",
+            "address" => "required",
+            "salary" => "required"
+        ]);
+
+        // if include file, upload
+        if($request->file()) {
+            $fileName = time().'_'.$request->profile->getClientOriginalName(); // 1970 jan 1
+            $filePath = $request->file('profile')->storeAs('staff_profile', $fileName, 'public');
+            $path = 'storage/'.$filePath;
+        }else{
+            $path = $request->oldprofile; // 2
+        }
+
+        // data store
+        // $staff = new Staff; // 3
+        $staff->name = $request->name;
+        $staff->profile = $path;
+        $staff->phoneno = $request->phoneno;
+        $staff->address = $request->address;
+        $staff->salary = $request->salary;
+        $staff->save();
+
+        // return redirect
+        return redirect()->route('staff.index');
     }
 
     /**
@@ -110,6 +140,7 @@ class StaffController extends Controller
      */
     public function destroy(Staff $staff)
     {
-        //
+        $staff->delete();
+        return redirect()->route('staff.index');
     }
 }

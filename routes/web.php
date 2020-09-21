@@ -23,3 +23,7 @@ Route::get('/','PageController@home')->name('homepage');
 Route::get('main/{key}','PageController@main')->name('mainpage');
 
 Route::resource('staff','StaffController');  // 7 (get-4)(post-1)(put-1)(delete-1) routes
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

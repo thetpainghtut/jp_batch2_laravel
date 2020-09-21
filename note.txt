@@ -3,3 +3,16 @@ Laravel artisan commands
   - php artisan route:list (show registered routes)
   - php artisan make:model Staff -m -r (model/migration/controller)
   - php artisan migrate
+
+Added UI
+--------
+  - composer require laravel/ui:^2.4
+  - php artisan ui bootstrap --auth
+  - npm install
+  - npm run dev
+  - web.php (added)
+  - resources/views
+    - auth
+    - layout
+  - backendtemplate (our main template)
+    - css / js (connect)
