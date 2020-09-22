@@ -35,3 +35,9 @@ Frontend UI
   - route / controller
   - / (blog home)
   - detail/1 (blog post)
+
+Payroll Process
+---------------
+  - manage (review - ajax)
+  - categoreis (name) / posts (title,photo,category_id,content)
+  - spatie

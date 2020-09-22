@@ -95,7 +95,9 @@ class StaffController extends Controller
      */
     public function edit(Staff $staff)
     {
-        return view('backend.staff.edit',compact('staff'));
+        $departments = Department::all();
+        $positions = Position::all();
+        return view('backend.staff.edit',compact('staff','departments','positions'));
     }
 
     /**

@@ -31,3 +31,7 @@ Route::resource('staff','StaffController');  // 7 (get-4)(post-1)(put-1)(delete-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('payrolls','PayrollController');
+
+Route::post('getstaff','PayrollController@getstaff')->name('getstaff');

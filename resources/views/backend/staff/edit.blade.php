@@ -19,6 +19,36 @@
     @csrf
     @method('PUT')
     <div class="form-group">
+      <label for="InputDepartment">Department:</label>
+      <select name="department" class="form-control">
+        <optgroup label="Choose Department">
+          @foreach($departments as $row)
+          <option value="{{$row->id}}" 
+            @if($row->id == $staff->department_id)
+            {{'selected'}}
+            @endif
+            >{{$row->name}}</option>
+          @endforeach
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="InputPosition">Position:</label>
+      <select name="position" class="form-control">
+        <optgroup label="Choose Position">
+          @foreach($positions as $row)
+          <option value="{{$row->id}}" 
+            @if($row->id == $staff->position_id)
+            {{'selected'}}
+            @endif
+            >{{$row->name}}</option>
+          @endforeach
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="form-group">
       <label for="InputName">Name:</label>
       <input type="text" name="name" class="form-control" id="InputName" value="{{$staff->name}}">
     </div>
