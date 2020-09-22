@@ -16,3 +16,22 @@ Added UI
     - layout
   - backendtemplate (our main template)
     - css / js (connect)
+
+Change Staff tabel Structure
+----------------------------
+  - create tabels
+    - departments
+    - positions
+  - add into staff table (department_id, position_id)
+  - create migration (changes staff tabel)
+  - php artisan migrate
+  - php artisan migrate:fresh (delete all table and rebuild all)
+  - CRUD (staff) 
+
+Frontend UI
+-----------
+  - download (blog home, blog post)
+  - frontendtemplate
+  - route / controller
+  - / (blog home)
+  - detail/1 (blog post)

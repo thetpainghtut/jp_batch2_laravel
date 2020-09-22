@@ -18,7 +18,11 @@ use Illuminate\Support\Facades\Route;
 //   return 'Hello Laravel 7';
 // });
 
-Route::get('/','PageController@home')->name('homepage');
+// Route::get('/','PageController@home')->name('homepage');
+
+Route::get('/','MainController@main')->name('homepage');
+
+Route::get('detail/{id}','MainController@detail')->name('detailpage');
 
 Route::get('main/{key}','PageController@main')->name('mainpage');
 
