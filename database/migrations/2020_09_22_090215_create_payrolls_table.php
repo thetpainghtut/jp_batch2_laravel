@@ -21,6 +21,7 @@ class CreatePayrollsTable extends Migration
             $table->integer('other_bonus');
             $table->integer('other_deduction');
             $table->integer('ssb');
+            $table->integer('total');
             $table->timestamps();
 
             // Relationship

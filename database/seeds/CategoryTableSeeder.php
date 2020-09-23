@@ -12,7 +12,7 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-      $categories = ['Web Design', 'HTML', 'Freebies', 'JavaScript', 'CSS', 'Tutorials'];
+      $categories = ['CSR', 'Activities', 'Sharing', 'Tutorials'];
 
       foreach ($categories as $row) {
         Category::create(['name' => $row]);

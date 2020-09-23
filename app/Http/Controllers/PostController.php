@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Payroll;
+use App\Post;
 use Illuminate\Http\Request;
-use App\Department;
-use App\Position;
-use App\Staff;
+use App\Category;
 
-class PayrollController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +15,8 @@ class PayrollController extends Controller
      */
     public function index()
     {
-        $departments = Department::all();
-        $positions = Position::all();
-        $staff = Staff::all();
-
-        return view('backend.payrolls.index',compact('departments','positions','staff'));
+        $posts = Post::all();
+        return view('backend.posts.index',compact('posts'));
     }
 
     /**
@@ -31,7 +26,8 @@ class PayrollController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('backend.posts.create',compact('categories'));
     }
 
     /**
@@ -48,10 +44,10 @@ class PayrollController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Payroll  $payroll
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Payroll $payroll)
+    public function show(Post $post)
     {
         //
     }
@@ -59,10 +55,10 @@ class PayrollController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Payroll  $payroll
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Payroll $payroll)
+    public function edit(Post $post)
     {
         //
     }
@@ -71,10 +67,10 @@ class PayrollController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Payroll  $payroll
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Payroll $payroll)
+    public function update(Request $request, Post $post)
     {
         //
     }
@@ -82,25 +78,11 @@ class PayrollController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Payroll  $payroll
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Payroll $payroll)
+    public function destroy(Post $post)
     {
         //
-    }
-
-    public function getstaff(Request $request)
-    {
-        $position = $request->position;
-        $staff = Staff::where('position_id',$position)->get();
-        return $staff;
-    }
-
-    public function getastaff(Request $request)
-    {
-        $id = $request->id;
-        $staff = Staff::find($id);
-        return $staff;
     }
 }

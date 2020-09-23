@@ -40,4 +40,8 @@ Payroll Process
 ---------------
   - manage (review - ajax)
   - categoreis (name) / posts (title,photo,category_id,content)
-  - spatie
+
+Homework
+--------
+  - Payroll Table Data insert
+  - Post Table CRUD (please try summernote)
