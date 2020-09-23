@@ -3,13 +3,6 @@
 
 @section('content')
   <h1>Staff Detail</h1>
-  {{-- <a href="{{route('staff.index')}}">Back</a>
-  
-
-  <p>Name: {{$staff->name}}</p>
-  <p>Phone No: {{$staff->phoneno}}</p>
-  <p>Salary: {{$staff->salary}}</p>
-  <p>Address: {{$staff->address}}</p> --}}
 
   <a href="{{route('staff.index')}}" class="btn btn-primary mb-2">Back</a>
 
@@ -24,6 +17,9 @@
           <p class="card-text">Phone No: {{$staff->phoneno}}</p>
           <p class="card-text">Salary: {{$staff->salary}}</p>
           <p class="card-text">Address: {{$staff->address}}</p>
+          <p class="card-text">Department: {{$staff->department->name}}</p>
+          <p class="card-text">Position: {{$staff->position->name}}</p>
+
         </div>
       </div>
     </div>

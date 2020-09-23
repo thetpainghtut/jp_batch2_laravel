@@ -43,5 +43,7 @@ Payroll Process
 
 Homework
 --------
-  - Payroll Table Data insert
-  - Post Table CRUD (please try summernote)
+  (1)- Payroll Table Data insert
+  (2)- Post Table CRUD (please try summernote)
+  (3)- Spatie / Logout
+  (4)- Relationship
